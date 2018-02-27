@@ -20,6 +20,7 @@ class LogInViewController: UIViewController {
     private let nameTextField = SkyFloatingLabelTextField(frame: CGRect(x: 10, y: 100, width: 220, height: 30))
     private let emailTextField = SkyFloatingLabelTextField(frame: CGRect(x: 10, y: 100, width: 220, height: 30))
     private let passwordTextField = SkyFloatingLabelTextField(frame: CGRect(x: 10, y: 100, width: 220, height: 30))
+    private let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     //DataSource
     let title1 = "LOGIN"
@@ -38,12 +39,12 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        if UserDefaults.standard.string(forKey: "accessToken") != nil {
-        //            //            self.performSegue(withIdentifier: "", sender: nil)
-        //        } else {
-        setUI(isSignIn: isSignIn)
-        setKeyboardNotification()
-        //        }
+//        if UserDefaults.standard.string(forKey: "accessToken") != nil {
+//            toNextScreen()
+//        } else {
+            setUI(isSignIn: isSignIn)
+            setKeyboardNotification()
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -194,8 +195,14 @@ extension LogInViewController  {
             logInViewModel.dataRequest.email = emailTextField.text!
             logInViewModel.dataRequest.password = passwordTextField.text!
             
+            startLoading()
+            bigButton.isEnabled = false
+            smallButton.isEnabled = false
             if isSignIn {
                 logInViewModel.postLogin(completion: { (success) in
+                    self.stopLoading()
+                    self.bigButton.isEnabled = true
+                    self.smallButton.isEnabled = true
                     if success {
                         self.toNextScreen()
                     } else {
@@ -204,6 +211,9 @@ extension LogInViewController  {
                 })
             } else {
                 logInViewModel.postSignUp(completion: { (success) in
+                    self.stopLoading()
+                    self.bigButton.isEnabled = true
+                    self.smallButton.isEnabled = true
                     if success {
                         self.toNextScreen()
                     } else {
@@ -238,6 +248,21 @@ extension LogInViewController  {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         let result = emailTest.evaluate(with: email)
         return result
+    }
+    
+    fileprivate func startLoading(){
+        activityIndicator.center = self.view.center;
+        activityIndicator.hidesWhenStopped = true;
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray;
+        view.addSubview(activityIndicator);
+        
+        activityIndicator.startAnimating();
+        UIApplication.shared.beginIgnoringInteractionEvents();
+    }
+    
+    fileprivate func stopLoading(){
+        activityIndicator.stopAnimating();
+        UIApplication.shared.endIgnoringInteractionEvents();
     }
 }
 

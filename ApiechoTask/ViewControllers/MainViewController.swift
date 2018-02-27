@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
     //UI
     let tableView = UITableView()
     
@@ -20,14 +20,18 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUI()
         setTableView()
         
         tableView.dataSource = self
-//        tableView.delegate = self
+        mainViewModel.getText { (success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -39,6 +43,20 @@ extension MainViewController  {
     
     fileprivate func setUI() {
         self.title = "Character in the text"
+        
+        let logOutUIBarButtonItem = UIBarButtonItem(title: "LogOut", style: .plain, target: self, action: #selector(logOutButtonAction))
+        self.navigationItem.rightBarButtonItem  = logOutUIBarButtonItem
+
+    }
+    
+    @objc func logOutButtonAction(){
+
+        UserDefaults.standard.removeObject(forKey: "accessToken")
+        self.dismiss(animated: true, completion: nil)
+//        let logInViewController = LogInViewController()
+//        logInViewController.view.backgroundColor = .white
+//        logInViewController.isSignIn = true
+//        self.present(logInViewController, animated: true, completion: nil)
     }
     
     fileprivate func setTableView() {

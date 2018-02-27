@@ -21,15 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         
         let loginViewController = LogInViewController()
-//        let nav:UINavigationController = UINavigationController(rootViewController: loginViewController);
         
         self.window?.rootViewController = loginViewController;
         self.window?.makeKeyAndVisible();
-        
-//        UINavigationBar.appearance().barTintColor = .black
-//        UINavigationBar.appearance().tintColor = .white
-//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-//        UINavigationBar.appearance().isTranslucent = false
         
         return true
     }
