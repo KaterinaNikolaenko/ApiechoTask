@@ -15,6 +15,12 @@
 		06CE3C122045536F00DCBD92 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C112045536F00DCBD92 /* UIView+Constraints.swift */; };
 		06CE3C142045539800DCBD92 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C132045539800DCBD92 /* UIColor+Extension.swift */; };
 		06CE3C1620457E6600DCBD92 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1520457E6600DCBD92 /* UIViewController+Extension.swift */; };
+		06CE3C182045882500DCBD92 /* PostLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C172045882500DCBD92 /* PostLoginRequest.swift */; };
+		06CE3C1A2045887200DCBD92 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C192045887200DCBD92 /* HttpClient.swift */; };
+		06CE3C1C204588DA00DCBD92 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1B204588DA00DCBD92 /* Constants.swift */; };
+		06CE3C1E20458D0500DCBD92 /* PostLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1D20458D0500DCBD92 /* PostLoginResponse.swift */; };
+		06CE3C2020458D9300DCBD92 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1F20458D9300DCBD92 /* ApiError.swift */; };
+		06CE3C222045945400DCBD92 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C212045945400DCBD92 /* LogInViewModel.swift */; };
 		28C672AAF684A96F08D02BE0 /* Pods_ApiechoTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +35,12 @@
 		06CE3C112045536F00DCBD92 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		06CE3C132045539800DCBD92 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		06CE3C1520457E6600DCBD92 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		06CE3C172045882500DCBD92 /* PostLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLoginRequest.swift; sourceTree = "<group>"; };
+		06CE3C192045887200DCBD92 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		06CE3C1B204588DA00DCBD92 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		06CE3C1D20458D0500DCBD92 /* PostLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLoginResponse.swift; sourceTree = "<group>"; };
+		06CE3C1F20458D9300DCBD92 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		06CE3C212045945400DCBD92 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		461D16409AA43127C8D4CD3B /* Pods-ApiechoTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.debug.xcconfig"; sourceTree = "<group>"; };
 		B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiechoTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B89A147CD14675EC6144FD /* Pods-ApiechoTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +96,9 @@
 		06CE3C08204552B700DCBD92 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				06CE3C172045882500DCBD92 /* PostLoginRequest.swift */,
+				06CE3C1D20458D0500DCBD92 /* PostLoginResponse.swift */,
+				06CE3C1F20458D9300DCBD92 /* ApiError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +106,7 @@
 		06CE3C09204552CD00DCBD92 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				06CE3C212045945400DCBD92 /* LogInViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -123,6 +139,7 @@
 		06CE3C0E2045532A00DCBD92 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				06CE3C1B204588DA00DCBD92 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -140,6 +157,7 @@
 		06CE3C102045534400DCBD92 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				06CE3C192045887200DCBD92 /* HttpClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -273,11 +291,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,9 +316,15 @@
 			files = (
 				06CE3C122045536F00DCBD92 /* UIView+Constraints.swift in Sources */,
 				06CE3BF920454FEF00DCBD92 /* LogInViewController.swift in Sources */,
+				06CE3C222045945400DCBD92 /* LogInViewModel.swift in Sources */,
 				06CE3BF720454FEF00DCBD92 /* AppDelegate.swift in Sources */,
+				06CE3C2020458D9300DCBD92 /* ApiError.swift in Sources */,
 				06CE3C1620457E6600DCBD92 /* UIViewController+Extension.swift in Sources */,
+				06CE3C1A2045887200DCBD92 /* HttpClient.swift in Sources */,
 				06CE3C142045539800DCBD92 /* UIColor+Extension.swift in Sources */,
+				06CE3C182045882500DCBD92 /* PostLoginRequest.swift in Sources */,
+				06CE3C1E20458D0500DCBD92 /* PostLoginResponse.swift in Sources */,
+				06CE3C1C204588DA00DCBD92 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

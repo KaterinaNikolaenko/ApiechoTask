@@ -31,12 +31,17 @@ class LogInViewController: UIViewController {
     let titleSmallButton1 = "Sign Up"
     let titleSmallButton2 = "Login"
     var isSignIn = true
+    var logInViewModel = LogInViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUI(isSignIn: isSignIn)
-        setKeyboardNotification()
+//        if UserDefaults.standard.string(forKey: "accessToken") != nil {
+//            //            self.performSegue(withIdentifier: "", sender: nil)
+//        } else {
+            setUI(isSignIn: isSignIn)
+            setKeyboardNotification()
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,7 +98,7 @@ extension LogInViewController  {
         emailTextField.selectedTitleColor = UIColor.CustomColors.darkRed
         emailTextField.placeholder = "Email"
         emailTextField.title = "Email"
-        emailTextField.text = ""
+        emailTextField.text = "doit@d.com"
         emailTextField.keyboardType = UIKeyboardType.emailAddress
         
         passwordTextField.tintColor = UIColor.CustomColors.darkRed
@@ -101,7 +106,7 @@ extension LogInViewController  {
         passwordTextField.selectedTitleColor = UIColor.CustomColors.darkRed
         passwordTextField.placeholder = "Password"
         passwordTextField.title = "Password"
-        passwordTextField.text = ""
+        passwordTextField.text = "qqqqq"
         passwordTextField.isSecureTextEntry = true
         
         view.addSubview(avatarImageView)
@@ -179,6 +184,16 @@ extension LogInViewController  {
             createAlert(title: "Error in form", message: "Please enter the correct password")
         } else if nameTextField.text == "" && isSignIn == false {
             createAlert(title: "Error in form", message: "Please enter your credentials")
+        } else {
+            logInViewModel.dataRequest.email = emailTextField.text!
+            logInViewModel.dataRequest.password = passwordTextField.text!
+            logInViewModel.postLogin(completion: { (success) in
+                if success {
+                    // next page
+                } else {
+                    self.createAlert(title: "Error!", message: "Error message")
+                }
+            })
         }
     }
     

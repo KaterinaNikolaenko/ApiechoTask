@@ -7,6 +7,8 @@ target 'ApiechoTask' do
 
   # Web services
     pod 'Alamofire'
+    pod 'ObjectMapper'
+    pod 'AlamofireObjectMapper'
     
   # UI
     pod 'SkyFloatingLabelTextField'
