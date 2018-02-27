@@ -102,7 +102,7 @@ extension LogInViewController  {
         emailTextField.selectedTitleColor = UIColor.CustomColors.darkRed
         emailTextField.placeholder = "Email"
         emailTextField.title = "Email"
-        emailTextField.text = "doit@d.com"
+        emailTextField.text = ""
         emailTextField.clearButtonMode = .whileEditing
         emailTextField.keyboardType = UIKeyboardType.emailAddress
         
@@ -111,7 +111,7 @@ extension LogInViewController  {
         passwordTextField.selectedTitleColor = UIColor.CustomColors.darkRed
         passwordTextField.placeholder = "Password"
         passwordTextField.title = "Password"
-        passwordTextField.text = "qqqqq"
+        passwordTextField.text = ""
         passwordTextField.clearButtonMode = .whileEditing
         passwordTextField.isSecureTextEntry = true
         

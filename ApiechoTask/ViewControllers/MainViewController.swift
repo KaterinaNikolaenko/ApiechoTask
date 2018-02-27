@@ -11,7 +11,8 @@ import UIKit
 class MainViewController: UIViewController {
     
     //UI
-    let tableView = UITableView()
+    private let tableView = UITableView()
+    private var refreshControl: UIRefreshControl!
     
     //Data Source
     var mainViewModel = MainViewModel()
@@ -25,11 +26,17 @@ class MainViewController: UIViewController {
         setTableView()
         
         tableView.dataSource = self
-        mainViewModel.getText { (success) in
-            if success {
-                self.tableView.reloadData()
-            }
-        }
+        updateData()
+        
+        //Refresh table
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh...")
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refreshTable(sender:AnyObject) {
+        self.updateData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,6 +71,15 @@ extension MainViewController  {
         tableView.frame = CGRect(x: 0, y: 50, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.view.addSubview(tableView)
+    }
+    
+    func updateData() {
+        mainViewModel.getText { (success) in
+            self.refreshControl.endRefreshing()
+            if success {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
