@@ -12,6 +12,7 @@
 		06CE3BFC20454FEF00DCBD92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CE3BFA20454FEF00DCBD92 /* Main.storyboard */; };
 		06CE3BFE20454FEF00DCBD92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CE3BFD20454FEF00DCBD92 /* Assets.xcassets */; };
 		06CE3C0120454FEF00DCBD92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CE3BFF20454FEF00DCBD92 /* LaunchScreen.storyboard */; };
+		28C672AAF684A96F08D02BE0 /* Pods_ApiechoTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		06CE3BFD20454FEF00DCBD92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06CE3C0020454FEF00DCBD92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06CE3C0220454FEF00DCBD92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		461D16409AA43127C8D4CD3B /* Pods-ApiechoTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.debug.xcconfig"; sourceTree = "<group>"; };
+		B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiechoTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2B89A147CD14675EC6144FD /* Pods-ApiechoTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C672AAF684A96F08D02BE0 /* Pods_ApiechoTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				06CE3BF520454FEF00DCBD92 /* ApiechoTask */,
 				06CE3BF420454FEF00DCBD92 /* Products */,
+				BC4CB3868B7A947A1BB7CB27 /* Pods */,
+				FB888B6E0850E58BD00E109F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = ApiechoTask;
 			sourceTree = "<group>";
 		};
+		BC4CB3868B7A947A1BB7CB27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				461D16409AA43127C8D4CD3B /* Pods-ApiechoTask.debug.xcconfig */,
+				C2B89A147CD14675EC6144FD /* Pods-ApiechoTask.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB888B6E0850E58BD00E109F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06CE3C0520454FEF00DCBD92 /* Build configuration list for PBXNativeTarget "ApiechoTask" */;
 			buildPhases = (
+				830F14E89DDF8148E44668CA /* [CP] Check Pods Manifest.lock */,
 				06CE3BEF20454FEF00DCBD92 /* Sources */,
 				06CE3BF020454FEF00DCBD92 /* Frameworks */,
 				06CE3BF120454FEF00DCBD92 /* Resources */,
+				B736612DC598425248E65EFF /* [CP] Embed Pods Frameworks */,
+				822908F2D8EE8A81B7ADF552 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		822908F2D8EE8A81B7ADF552 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		830F14E89DDF8148E44668CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApiechoTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B736612DC598425248E65EFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06CE3BEF20454FEF00DCBD92 /* Sources */ = {
@@ -272,6 +355,7 @@
 		};
 		06CE3C0620454FEF00DCBD92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 461D16409AA43127C8D4CD3B /* Pods-ApiechoTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +371,7 @@
 		};
 		06CE3C0720454FEF00DCBD92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2B89A147CD14675EC6144FD /* Pods-ApiechoTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
