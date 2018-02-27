@@ -14,6 +14,7 @@
 		06CE3C0120454FEF00DCBD92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CE3BFF20454FEF00DCBD92 /* LaunchScreen.storyboard */; };
 		06CE3C122045536F00DCBD92 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C112045536F00DCBD92 /* UIView+Constraints.swift */; };
 		06CE3C142045539800DCBD92 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C132045539800DCBD92 /* UIColor+Extension.swift */; };
+		06CE3C1620457E6600DCBD92 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1520457E6600DCBD92 /* UIViewController+Extension.swift */; };
 		28C672AAF684A96F08D02BE0 /* Pods_ApiechoTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		06CE3C0220454FEF00DCBD92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06CE3C112045536F00DCBD92 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		06CE3C132045539800DCBD92 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		06CE3C1520457E6600DCBD92 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		461D16409AA43127C8D4CD3B /* Pods-ApiechoTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.debug.xcconfig"; sourceTree = "<group>"; };
 		B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiechoTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B89A147CD14675EC6144FD /* Pods-ApiechoTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				06CE3C112045536F00DCBD92 /* UIView+Constraints.swift */,
 				06CE3C132045539800DCBD92 /* UIColor+Extension.swift */,
+				06CE3C1520457E6600DCBD92 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				06CE3C122045536F00DCBD92 /* UIView+Constraints.swift in Sources */,
 				06CE3BF920454FEF00DCBD92 /* LogInViewController.swift in Sources */,
 				06CE3BF720454FEF00DCBD92 /* AppDelegate.swift in Sources */,
+				06CE3C1620457E6600DCBD92 /* UIViewController+Extension.swift in Sources */,
 				06CE3C142045539800DCBD92 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,11 +437,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9VD9T9R724;
 				INFOPLIST_FILE = ApiechoTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.katerinanikolaenko.ApiechoTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,11 +454,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9VD9T9R724;
 				INFOPLIST_FILE = ApiechoTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.katerinanikolaenko.ApiechoTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
