@@ -73,10 +73,12 @@ extension MainViewController  {
     }
     
     func updateData() {
-        mainViewModel.getText { (success) in
+        mainViewModel.getText { (isSuccess, errorName, errorMessage) in
             self.refreshControl.endRefreshing()
-            if success {
+            if isSuccess {
                 self.tableView.reloadData()
+            } else {
+                self.createAlert(title: errorName!, message: errorMessage!)
             }
         }
     }

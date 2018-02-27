@@ -184,6 +184,10 @@ extension LogInViewController  {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         
+        if !Connectivity.isConnectedToInternet() {
+            self.createAlert(title: "Error", message: "Check your Internet connection and try again!")
+            return
+        }
         if emailTextField.text == "" || passwordTextField.text == "" {
             createAlert(title: "Error in form", message: "Please enter your credentials")
         } else if !isValidEmail(email: emailTextField.text!) {

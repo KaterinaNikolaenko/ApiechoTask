@@ -14,9 +14,10 @@ class MainViewModel: NSObject {
     var dictCharacters = [Character : Int]()
     
     // Log in to Server
-    func getText(completion: @escaping (Bool) -> ()) {
-        
+    func getText(completion: @escaping (Bool, String?, String?) -> ()) {
+        dictCharacters.removeAll()
         HttpClient.sharedInstance.getText(successCallback: { (dataResponse) -> Void in
+            var temporaryArray = [String]()
             if dataResponse.dataText != "" {
                 let allString = dataResponse.dataText.lowercased()
                 for letter in allString {
@@ -29,15 +30,16 @@ class MainViewModel: NSObject {
                 let newDictionary = self.dictCharacters.sortedByValue
                 for (key, value) in newDictionary {
                     if key == " " {
-                        self.itemsArray.append("space - " +  String(describing: value) + " times")
+                        temporaryArray.append("space - " +  String(describing: value) + " times")
                     } else {
-                        self.itemsArray.append(String(describing: key) + " - " +  String(describing: value) + " times")
+                        temporaryArray.append(String(describing: key) + " - " +  String(describing: value) + " times")
                     }
                 }
+                self.itemsArray = temporaryArray
             }
-            completion(true)
+            completion(true, nil, nil)
         }) { (error) -> Void in
-            completion(false)
+            completion(false, error[0].name, error[0].message)
         }
     }
 }
