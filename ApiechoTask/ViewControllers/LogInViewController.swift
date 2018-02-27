@@ -17,9 +17,9 @@ class LogInViewController: UIViewController {
     private let messageLabel = UILabel()
     private var bigButton = UIButton()
     private var smallButton = UIButton()
-    private let nameTextField = SkyFloatingLabelTextField(frame: CGRect(x: 10, y: 100, width: 220, height: 30))
-    private let emailTextField = SkyFloatingLabelTextField(frame: CGRect(x: 10, y: 100, width: 220, height: 30))
-    private let passwordTextField = SkyFloatingLabelTextField(frame: CGRect(x: 10, y: 100, width: 220, height: 30))
+    let nameTextField = SkyFloatingLabelTextField(frame: CGRect(x: 10, y: 100, width: 220, height: 30))
+    let emailTextField = SkyFloatingLabelTextField(frame: CGRect(x: 10, y: 100, width: 220, height: 30))
+    let passwordTextField = SkyFloatingLabelTextField(frame: CGRect(x: 10, y: 100, width: 220, height: 30))
     private let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     //DataSource
@@ -39,12 +39,8 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if UserDefaults.standard.string(forKey: "accessToken") != nil {
-//            toNextScreen()
-//        } else {
             setUI(isSignIn: isSignIn)
             setKeyboardNotification()
-//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -102,7 +98,7 @@ extension LogInViewController  {
         emailTextField.selectedTitleColor = UIColor.CustomColors.darkRed
         emailTextField.placeholder = "Email"
         emailTextField.title = "Email"
-        emailTextField.text = "doit@d.com"
+        emailTextField.text = ""
         emailTextField.clearButtonMode = .whileEditing
         emailTextField.keyboardType = UIKeyboardType.emailAddress
         
@@ -111,7 +107,7 @@ extension LogInViewController  {
         passwordTextField.selectedTitleColor = UIColor.CustomColors.darkRed
         passwordTextField.placeholder = "Password"
         passwordTextField.title = "Password"
-        passwordTextField.text = "qqqqq"
+        passwordTextField.text = ""
         passwordTextField.clearButtonMode = .whileEditing
         passwordTextField.isSecureTextEntry = true
         

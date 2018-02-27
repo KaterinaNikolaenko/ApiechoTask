@@ -59,11 +59,13 @@ extension MainViewController  {
     @objc func logOutButtonAction(){
 
         UserDefaults.standard.removeObject(forKey: "accessToken")
-        self.dismiss(animated: true, completion: nil)
-//        let logInViewController = LogInViewController()
-//        logInViewController.view.backgroundColor = .white
-//        logInViewController.isSignIn = true
-//        self.present(logInViewController, animated: true, completion: nil)
+        let logInViewController = LogInViewController()
+        logInViewController.view.backgroundColor = .white
+        logInViewController.isSignIn = true
+        logInViewController.nameTextField.text = ""
+        logInViewController.emailTextField.text = ""
+        logInViewController.passwordTextField.text = ""
+        self.present(logInViewController, animated: true, completion: nil)
     }
     
     fileprivate func setTableView() {

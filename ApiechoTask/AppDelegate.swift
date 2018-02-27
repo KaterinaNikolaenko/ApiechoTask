@@ -20,9 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         
-        let loginViewController = LogInViewController()
-        
-        self.window?.rootViewController = loginViewController;
+        if UserDefaults.standard.string(forKey: "accessToken") != nil {
+            let mainViewController = MainViewController()
+            let navigationController = UINavigationController(rootViewController: mainViewController)
+            self.window?.rootViewController = navigationController
+        } else {
+            let loginViewController = LogInViewController()
+            self.window?.rootViewController = loginViewController
+        }
         self.window?.makeKeyAndVisible();
         
         return true
