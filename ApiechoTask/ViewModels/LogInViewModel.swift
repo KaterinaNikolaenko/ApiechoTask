@@ -13,24 +13,24 @@ class LogInViewModel: NSObject {
     var dataRequest = PostLoginRequest()
     
     // Log in to Server
-    func postLogin(completion: @escaping (Bool) -> ()) {
+    func postLogin(completion: @escaping (Bool, String?, String?) -> ()) {
         
         HttpClient.sharedInstance.postLogIn(data: dataRequest, successCallback: { (dataResponse) -> Void in
             UserDefaults.standard.set(dataResponse.accessToken, forKey: "accessToken")
-            completion(true)
+            completion(true, nil, nil)
         }) { (error) -> Void in
-            completion(false)
+            completion(false, error[0].name, error[0].message)
         }
     }
     
     // Sign up
-    func postSignUp(completion: @escaping (Bool) -> ()) {
+    func postSignUp(completion: @escaping (Bool, String?, String?) -> ()) {
         
         HttpClient.sharedInstance.postSignUp(data: dataRequest, successCallback: { (dataResponse) -> Void in
             UserDefaults.standard.set(dataResponse.accessToken, forKey: "accessToken")
-            completion(true)
+            completion(true, nil, nil)
         }) { (error) -> Void in
-            completion(false)
+            completion(false, error[0].name, error[0].message)
         }
     }
 }

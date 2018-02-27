@@ -18,13 +18,15 @@
 		06CE3C182045882500DCBD92 /* PostLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C172045882500DCBD92 /* PostLoginRequest.swift */; };
 		06CE3C1A2045887200DCBD92 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C192045887200DCBD92 /* HttpClient.swift */; };
 		06CE3C1C204588DA00DCBD92 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1B204588DA00DCBD92 /* Constants.swift */; };
-		06CE3C1E20458D0500DCBD92 /* PostLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1D20458D0500DCBD92 /* PostLoginResponse.swift */; };
+		06CE3C1E20458D0500DCBD92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1D20458D0500DCBD92 /* User.swift */; };
 		06CE3C2020458D9300DCBD92 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1F20458D9300DCBD92 /* ApiError.swift */; };
 		06CE3C222045945400DCBD92 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C212045945400DCBD92 /* LogInViewModel.swift */; };
 		06CE3C242045AF6D00DCBD92 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C232045AF6D00DCBD92 /* MainViewController.swift */; };
 		06CE3C262045B05300DCBD92 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C252045B05300DCBD92 /* MainViewModel.swift */; };
-		06CE3C282045C15900DCBD92 /* GetTextResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C272045C15900DCBD92 /* GetTextResponse.swift */; };
+		06CE3C282045C15900DCBD92 /* StringApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C272045C15900DCBD92 /* StringApiResponse.swift */; };
 		06CE3C2A2045CD7B00DCBD92 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C292045CD7B00DCBD92 /* Dictionary+Extension.swift */; };
+		06CE3C2C2045E4D100DCBD92 /* ObjectApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C2B2045E4D100DCBD92 /* ObjectApiResponse.swift */; };
+		06CE3C2E2045E6E900DCBD92 /* BaseApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C2D2045E6E900DCBD92 /* BaseApiResponse.swift */; };
 		28C672AAF684A96F08D02BE0 /* Pods_ApiechoTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,13 +44,15 @@
 		06CE3C172045882500DCBD92 /* PostLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLoginRequest.swift; sourceTree = "<group>"; };
 		06CE3C192045887200DCBD92 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		06CE3C1B204588DA00DCBD92 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		06CE3C1D20458D0500DCBD92 /* PostLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLoginResponse.swift; sourceTree = "<group>"; };
+		06CE3C1D20458D0500DCBD92 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		06CE3C1F20458D9300DCBD92 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		06CE3C212045945400DCBD92 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		06CE3C232045AF6D00DCBD92 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		06CE3C252045B05300DCBD92 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		06CE3C272045C15900DCBD92 /* GetTextResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTextResponse.swift; sourceTree = "<group>"; };
+		06CE3C272045C15900DCBD92 /* StringApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringApiResponse.swift; sourceTree = "<group>"; };
 		06CE3C292045CD7B00DCBD92 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		06CE3C2B2045E4D100DCBD92 /* ObjectApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectApiResponse.swift; sourceTree = "<group>"; };
+		06CE3C2D2045E6E900DCBD92 /* BaseApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiResponse.swift; sourceTree = "<group>"; };
 		461D16409AA43127C8D4CD3B /* Pods-ApiechoTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.debug.xcconfig"; sourceTree = "<group>"; };
 		B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiechoTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B89A147CD14675EC6144FD /* Pods-ApiechoTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,9 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				06CE3C172045882500DCBD92 /* PostLoginRequest.swift */,
-				06CE3C1D20458D0500DCBD92 /* PostLoginResponse.swift */,
+				06CE3C1D20458D0500DCBD92 /* User.swift */,
 				06CE3C1F20458D9300DCBD92 /* ApiError.swift */,
-				06CE3C272045C15900DCBD92 /* GetTextResponse.swift */,
+				06CE3C272045C15900DCBD92 /* StringApiResponse.swift */,
+				06CE3C2B2045E4D100DCBD92 /* ObjectApiResponse.swift */,
+				06CE3C2D2045E6E900DCBD92 /* BaseApiResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -331,14 +337,16 @@
 				06CE3C222045945400DCBD92 /* LogInViewModel.swift in Sources */,
 				06CE3C242045AF6D00DCBD92 /* MainViewController.swift in Sources */,
 				06CE3BF720454FEF00DCBD92 /* AppDelegate.swift in Sources */,
+				06CE3C2C2045E4D100DCBD92 /* ObjectApiResponse.swift in Sources */,
 				06CE3C262045B05300DCBD92 /* MainViewModel.swift in Sources */,
 				06CE3C2020458D9300DCBD92 /* ApiError.swift in Sources */,
 				06CE3C1620457E6600DCBD92 /* UIViewController+Extension.swift in Sources */,
 				06CE3C1A2045887200DCBD92 /* HttpClient.swift in Sources */,
 				06CE3C142045539800DCBD92 /* UIColor+Extension.swift in Sources */,
 				06CE3C182045882500DCBD92 /* PostLoginRequest.swift in Sources */,
-				06CE3C1E20458D0500DCBD92 /* PostLoginResponse.swift in Sources */,
-				06CE3C282045C15900DCBD92 /* GetTextResponse.swift in Sources */,
+				06CE3C2E2045E6E900DCBD92 /* BaseApiResponse.swift in Sources */,
+				06CE3C1E20458D0500DCBD92 /* User.swift in Sources */,
+				06CE3C282045C15900DCBD92 /* StringApiResponse.swift in Sources */,
 				06CE3C1C204588DA00DCBD92 /* Constants.swift in Sources */,
 				06CE3C2A2045CD7B00DCBD92 /* Dictionary+Extension.swift in Sources */,
 			);

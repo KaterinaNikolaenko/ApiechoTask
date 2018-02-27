@@ -27,74 +27,76 @@ class HttpClient {
     }
     
     //Log in
-    func postLogIn(data:PostLoginRequest, successCallback: @escaping (PostLoginResponse) -> (), errorCallback: @escaping (String) -> ()) {
+    func postLogIn(data:PostLoginRequest, successCallback: @escaping (User) -> (), errorCallback: @escaping ([ApiError]) -> ()) {
         let url = Constants.URLs.baseURL + "login/"
         let parameters: Parameters = [
             "email": data.email,
             "password": data.password
         ]
-        Alamofire.request(url, method: .post, parameters: parameters).responseObject(keyPath: "data", completionHandler: { (response: DataResponse<PostLoginResponse>) in
-            
-            guard response.response != nil else {
-                errorCallback("Error!")
+        Alamofire.request(url, method: .post, parameters: parameters).responseObject{ (response: DataResponse<ObjectApiResponse<User>>) in
+            let fatalError = ApiError()
+            fatalError.name = "Error"
+            fatalError.message = "Fatal Error"
+            guard response.response != nil || response.result.value != nil else {
+                errorCallback([fatalError])
                 return
             }
-            if(!self.isSuccessStatus(status: (response.response?.statusCode)!)) {
-                errorCallback("Error!")
+            if(!response.result.value!.success){
+                errorCallback(response.result.value!.errors)
             } else {
-                successCallback(response.result.value!)
+                successCallback((response.result.value?.data)!)
             }
-        })
+        }
     }
     
     //Sign up
-    func postSignUp(data:PostLoginRequest, successCallback: @escaping (PostLoginResponse) -> (), errorCallback: @escaping (String) -> ()) {
+    func postSignUp(data:PostLoginRequest, successCallback: @escaping (User) -> (), errorCallback: @escaping ([ApiError]) -> ()) {
         let url = Constants.URLs.baseURL + "signup/"
         let parameters: Parameters = [
             "name": data.name,
             "email": data.email,
             "password": data.password
         ]
-        Alamofire.request(url, method: .post, parameters: parameters).responseObject(keyPath: "data", completionHandler: { (response: DataResponse<PostLoginResponse>) in
-            
-            guard response.response != nil else {
-                errorCallback("Error!")
+        Alamofire.request(url, method: .post, parameters: parameters).responseObject{ (response: DataResponse<ObjectApiResponse<User>>) in
+            let fatalError = ApiError()
+            fatalError.name = "Error"
+            fatalError.message = "Fatal Error"
+            guard response.response != nil || response.result.value != nil else {
+                errorCallback([fatalError])
                 return
             }
-            if(!self.isSuccessStatus(status: (response.response?.statusCode)!)) {
-                errorCallback("Error!")
+            if(!response.result.value!.success){
+                errorCallback(response.result.value!.errors)
             } else {
-                successCallback(response.result.value!)
+                successCallback((response.result.value?.data)!)
             }
-        })
+        }
     }
     
     //Get text
-    func getText(successCallback: @escaping (GetTextResponse) -> (), errorCallback: @escaping (String) -> ()) {
+    func getText(successCallback: @escaping (StringApiResponse) -> (), errorCallback: @escaping ([ApiError]) -> ()) {
         let url = Constants.URLs.baseURL + "get/text/"
         let locale = deviceLocale()
         let parameters: Parameters = [
             "locale": locale
         ]
-        Alamofire.request(url, method: .get, parameters: parameters, headers: setHeaders()).responseObject{ (response: DataResponse<GetTextResponse>) in
-            
-            guard response.response != nil else {
-                errorCallback("Error!")
+        Alamofire.request(url, method: .get, parameters: parameters, headers: setHeaders()).responseObject{ (response: DataResponse<StringApiResponse>) in
+            let fatalError = ApiError()
+            fatalError.name = "Error"
+            fatalError.message = "Fatal Error"
+            guard response.response != nil || response.result.value != nil  else {
+                errorCallback([fatalError])
                 return
             }
-            if(!self.isSuccessStatus(status: (response.response?.statusCode)!)) {
-                errorCallback("Error!")
+            if(!response.result.value!.success){
+                errorCallback(response.result.value!.errors)
             } else {
-                successCallback(response.result.value!)
+                successCallback((response.result.value)!)
             }
         }
     }
     
-    fileprivate func isSuccessStatus(status:Int) -> Bool {
-        return (status >= 200 && status < 300)
-    }
-    
-    fileprivate func deviceLocale() -> String {
+    func deviceLocale() -> String {
         let languageComponents: [String : String] = NSLocale.components(fromLocaleIdentifier: NSLocale.preferredLanguages[0])
         var currentlanguage = "en"
         var currentcountry = "US"

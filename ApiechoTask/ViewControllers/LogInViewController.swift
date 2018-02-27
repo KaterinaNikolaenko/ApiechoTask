@@ -102,7 +102,7 @@ extension LogInViewController  {
         emailTextField.selectedTitleColor = UIColor.CustomColors.darkRed
         emailTextField.placeholder = "Email"
         emailTextField.title = "Email"
-        emailTextField.text = ""
+        emailTextField.text = "doit@d.com"
         emailTextField.clearButtonMode = .whileEditing
         emailTextField.keyboardType = UIKeyboardType.emailAddress
         
@@ -111,7 +111,7 @@ extension LogInViewController  {
         passwordTextField.selectedTitleColor = UIColor.CustomColors.darkRed
         passwordTextField.placeholder = "Password"
         passwordTextField.title = "Password"
-        passwordTextField.text = ""
+        passwordTextField.text = "qqqqq"
         passwordTextField.clearButtonMode = .whileEditing
         passwordTextField.isSecureTextEntry = true
         
@@ -199,25 +199,25 @@ extension LogInViewController  {
             bigButton.isEnabled = false
             smallButton.isEnabled = false
             if isSignIn {
-                logInViewModel.postLogin(completion: { (success) in
+                logInViewModel.postLogin(completion: { (isSuccess, errorName, errorMessage)  in
                     self.stopLoading()
                     self.bigButton.isEnabled = true
                     self.smallButton.isEnabled = true
-                    if success {
+                    if isSuccess {
                         self.toNextScreen()
                     } else {
-                        self.createAlert(title: "Error!", message: "Error message")
+                        self.createAlert(title: errorName!, message: errorMessage!)
                     }
                 })
             } else {
-                logInViewModel.postSignUp(completion: { (success) in
+                logInViewModel.postSignUp(completion: { (isSuccess, errorName, errorMessage) in
                     self.stopLoading()
                     self.bigButton.isEnabled = true
                     self.smallButton.isEnabled = true
-                    if success {
+                    if isSuccess {
                         self.toNextScreen()
                     } else {
-                        self.createAlert(title: "Error!", message: "Error message")
+                        self.createAlert(title: errorName!, message: errorMessage!)
                     }
                 })
             }

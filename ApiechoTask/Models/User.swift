@@ -1,5 +1,5 @@
 //
-//  GetTextResponse.swift
+//  PostLoginResponse.swift
 //  ApiechoTask
 //
 //  Created by Katerina on 27.02.18.
@@ -9,13 +9,13 @@
 import Foundation
 import ObjectMapper
 
-class GetTextResponse: Mappable  {
-    var dataText:String = ""
-    
+class User: Mappable  {
+    var accessToken:String = ""
+
     required init?(map: Map) {}
     
     func mapping(map: Map) {
-        dataText <- map["data"]
+        accessToken <- map["access_token"]
+        
     }
 }
-

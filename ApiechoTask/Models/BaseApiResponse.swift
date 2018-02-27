@@ -1,5 +1,5 @@
 //
-//  PostLoginResponse.swift
+//  BaseApiResponse.swift
 //  ApiechoTask
 //
 //  Created by Katerina on 27.02.18.
@@ -9,12 +9,14 @@
 import Foundation
 import ObjectMapper
 
-class PostLoginResponse: Mappable  {
-    var accessToken:String = ""
-
+class BaseApiResponse: Mappable {
+    var success = false
+    var errors = [ApiError]()
+    
     required init?(map: Map) {}
     
     func mapping(map: Map) {
-        accessToken <- map["access_token"]
+        success <- map["success"]
+        errors <- map["errors"]
     }
 }

@@ -11,11 +11,14 @@ import ObjectMapper
 
 class ApiError: Mappable  {
     var message:String = ""
+    var name:String = ""
     
+    init(){}
     required init?(map: Map) {}
     
     func mapping(map: Map) {
         message <- map["message"]
+        name <- map["name"]
     }
 }
 
