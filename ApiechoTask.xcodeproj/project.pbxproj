@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		06CE3BF720454FEF00DCBD92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3BF620454FEF00DCBD92 /* AppDelegate.swift */; };
-		06CE3BF920454FEF00DCBD92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3BF820454FEF00DCBD92 /* ViewController.swift */; };
+		06CE3BF920454FEF00DCBD92 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3BF820454FEF00DCBD92 /* LogInViewController.swift */; };
 		06CE3BFC20454FEF00DCBD92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CE3BFA20454FEF00DCBD92 /* Main.storyboard */; };
 		06CE3BFE20454FEF00DCBD92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CE3BFD20454FEF00DCBD92 /* Assets.xcassets */; };
 		06CE3C0120454FEF00DCBD92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CE3BFF20454FEF00DCBD92 /* LaunchScreen.storyboard */; };
+		06CE3C122045536F00DCBD92 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C112045536F00DCBD92 /* UIView+Constraints.swift */; };
+		06CE3C142045539800DCBD92 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C132045539800DCBD92 /* UIColor+Extension.swift */; };
 		28C672AAF684A96F08D02BE0 /* Pods_ApiechoTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		06CE3BF320454FEF00DCBD92 /* ApiechoTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiechoTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CE3BF620454FEF00DCBD92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		06CE3BF820454FEF00DCBD92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		06CE3BF820454FEF00DCBD92 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		06CE3BFB20454FEF00DCBD92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06CE3BFD20454FEF00DCBD92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06CE3C0020454FEF00DCBD92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06CE3C0220454FEF00DCBD92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06CE3C112045536F00DCBD92 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		06CE3C132045539800DCBD92 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		461D16409AA43127C8D4CD3B /* Pods-ApiechoTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.debug.xcconfig"; sourceTree = "<group>"; };
 		B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiechoTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B89A147CD14675EC6144FD /* Pods-ApiechoTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,14 +65,80 @@
 		06CE3BF520454FEF00DCBD92 /* ApiechoTask */ = {
 			isa = PBXGroup;
 			children = (
+				06CE3C0D2045531300DCBD92 /* Helpers */,
+				06CE3C0B204552E400DCBD92 /* Services */,
+				06CE3C0A204552DA00DCBD92 /* ViewControllers */,
+				06CE3C09204552CD00DCBD92 /* ViewModels */,
+				06CE3C08204552B700DCBD92 /* Models */,
 				06CE3BF620454FEF00DCBD92 /* AppDelegate.swift */,
-				06CE3BF820454FEF00DCBD92 /* ViewController.swift */,
 				06CE3BFA20454FEF00DCBD92 /* Main.storyboard */,
 				06CE3BFD20454FEF00DCBD92 /* Assets.xcassets */,
 				06CE3BFF20454FEF00DCBD92 /* LaunchScreen.storyboard */,
 				06CE3C0220454FEF00DCBD92 /* Info.plist */,
 			);
 			path = ApiechoTask;
+			sourceTree = "<group>";
+		};
+		06CE3C08204552B700DCBD92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		06CE3C09204552CD00DCBD92 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		06CE3C0A204552DA00DCBD92 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				06CE3BF820454FEF00DCBD92 /* LogInViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		06CE3C0B204552E400DCBD92 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				06CE3C102045534400DCBD92 /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		06CE3C0D2045531300DCBD92 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				06CE3C0F2045533600DCBD92 /* Extensions */,
+				06CE3C0E2045532A00DCBD92 /* Constants */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		06CE3C0E2045532A00DCBD92 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		06CE3C0F2045533600DCBD92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				06CE3C112045536F00DCBD92 /* UIView+Constraints.swift */,
+				06CE3C132045539800DCBD92 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		06CE3C102045534400DCBD92 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		BC4CB3868B7A947A1BB7CB27 /* Pods */ = {
@@ -219,8 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06CE3BF920454FEF00DCBD92 /* ViewController.swift in Sources */,
+				06CE3C122045536F00DCBD92 /* UIView+Constraints.swift in Sources */,
+				06CE3BF920454FEF00DCBD92 /* LogInViewController.swift in Sources */,
 				06CE3BF720454FEF00DCBD92 /* AppDelegate.swift in Sources */,
+				06CE3C142045539800DCBD92 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
