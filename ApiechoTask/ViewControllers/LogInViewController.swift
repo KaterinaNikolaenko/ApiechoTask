@@ -187,7 +187,7 @@ extension LogInViewController  {
         if emailTextField.text == "" || passwordTextField.text == "" {
             createAlert(title: "Error in form", message: "Please enter your credentials")
         } else if !isValidEmail(email: emailTextField.text!) {
-            createAlert(title: "Error in form", message: "Please enter the correct password")
+            createAlert(title: "Error in form", message: "Please enter the correct email")
         } else if nameTextField.text == "" && isSignIn == false {
             createAlert(title: "Error in form", message: "Please enter your credentials")
         } else {
