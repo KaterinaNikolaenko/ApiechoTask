@@ -36,12 +36,12 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if UserDefaults.standard.string(forKey: "accessToken") != nil {
-//            //            self.performSegue(withIdentifier: "", sender: nil)
-//        } else {
-            setUI(isSignIn: isSignIn)
-            setKeyboardNotification()
-//        }
+        //        if UserDefaults.standard.string(forKey: "accessToken") != nil {
+        //            //            self.performSegue(withIdentifier: "", sender: nil)
+        //        } else {
+        setUI(isSignIn: isSignIn)
+        setKeyboardNotification()
+        //        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -185,15 +185,27 @@ extension LogInViewController  {
         } else if nameTextField.text == "" && isSignIn == false {
             createAlert(title: "Error in form", message: "Please enter your credentials")
         } else {
+            logInViewModel.dataRequest.name = nameTextField.text!
             logInViewModel.dataRequest.email = emailTextField.text!
             logInViewModel.dataRequest.password = passwordTextField.text!
-            logInViewModel.postLogin(completion: { (success) in
-                if success {
-                    // next page
-                } else {
-                    self.createAlert(title: "Error!", message: "Error message")
-                }
-            })
+            
+            if isSignIn {
+                logInViewModel.postLogin(completion: { (success) in
+                    if success {
+                        // next page
+                    } else {
+                        self.createAlert(title: "Error!", message: "Error message")
+                    }
+                })
+            } else {
+                logInViewModel.postSignUp(completion: { (success) in
+                    if success {
+                        // next page
+                    } else {
+                        self.createAlert(title: "Error!", message: "Error message")
+                    }
+                })
+            }
         }
     }
     

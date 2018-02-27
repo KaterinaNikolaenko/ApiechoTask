@@ -22,4 +22,15 @@ class LogInViewModel: NSObject {
             completion(false)
         }
     }
+    
+    // Sign up
+    func postSignUp(completion: @escaping (Bool) -> ()) {
+        
+        HttpClient.sharedInstance.postSignUp(data: dataRequest, successCallback: { (dataResponse) -> Void in
+            UserDefaults.standard.set(dataResponse.accessToken, forKey: "accessToken")
+            completion(true)
+        }) { (error) -> Void in
+            completion(false)
+        }
+    }
 }

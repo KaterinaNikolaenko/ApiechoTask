@@ -47,6 +47,28 @@ class HttpClient {
         })
     }
     
+    //Sign up
+    func postSignUp(data:PostLoginRequest, successCallback: @escaping (PostLoginResponse) -> (), errorCallback: @escaping (String) -> ()) {
+        let url = Constants.URLs.baseURL + "signup/"
+        let parameters: Parameters = [
+            "name": data.name,
+            "email": data.email,
+            "password": data.password
+        ]
+        Alamofire.request(url, method: .post, parameters: parameters, headers: setHeaders()).responseObject(keyPath: "data", completionHandler: { (response: DataResponse<PostLoginResponse>) in
+            
+            guard response.response != nil else {
+                errorCallback("Error!")
+                return
+            }
+            if(!self.isSuccessStatus(status: (response.response?.statusCode)!)) {
+                errorCallback("Error!")
+            } else {
+                successCallback(response.result.value!)
+            }
+        })
+    }
+    
     func isSuccessStatus(status:Int) -> Bool {
         return (status >= 200 && status < 300)
     }

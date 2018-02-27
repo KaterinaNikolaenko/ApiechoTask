@@ -19,4 +19,18 @@ extension UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func deviceLocale() -> String {
+        let languageComponents: [String : String] = NSLocale.components(fromLocaleIdentifier: NSLocale.preferredLanguages[0])
+        var currentlanguage = "en"
+        var currentcountry = "US"
+        
+        if let languageCode: String = languageComponents[NSLocale.Key.languageCode.rawValue] {
+            currentlanguage = languageCode
+        }
+        if let countryCode: String = languageComponents[NSLocale.Key.countryCode.rawValue] {
+            currentcountry = countryCode
+        }
+        return currentlanguage + "_" + currentcountry
+    }
 }
