@@ -21,6 +21,8 @@
 		06CE3C1E20458D0500DCBD92 /* PostLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1D20458D0500DCBD92 /* PostLoginResponse.swift */; };
 		06CE3C2020458D9300DCBD92 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C1F20458D9300DCBD92 /* ApiError.swift */; };
 		06CE3C222045945400DCBD92 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C212045945400DCBD92 /* LogInViewModel.swift */; };
+		06CE3C242045AF6D00DCBD92 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C232045AF6D00DCBD92 /* MainViewController.swift */; };
+		06CE3C262045B05300DCBD92 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3C252045B05300DCBD92 /* MainViewModel.swift */; };
 		28C672AAF684A96F08D02BE0 /* Pods_ApiechoTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		06CE3C1D20458D0500DCBD92 /* PostLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLoginResponse.swift; sourceTree = "<group>"; };
 		06CE3C1F20458D9300DCBD92 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		06CE3C212045945400DCBD92 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		06CE3C232045AF6D00DCBD92 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		06CE3C252045B05300DCBD92 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		461D16409AA43127C8D4CD3B /* Pods-ApiechoTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.debug.xcconfig"; sourceTree = "<group>"; };
 		B8BEF99775506786AD2BA54F /* Pods_ApiechoTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiechoTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B89A147CD14675EC6144FD /* Pods-ApiechoTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiechoTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiechoTask/Pods-ApiechoTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				06CE3C212045945400DCBD92 /* LogInViewModel.swift */,
+				06CE3C252045B05300DCBD92 /* MainViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				06CE3BF820454FEF00DCBD92 /* LogInViewController.swift */,
+				06CE3C232045AF6D00DCBD92 /* MainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -317,7 +323,9 @@
 				06CE3C122045536F00DCBD92 /* UIView+Constraints.swift in Sources */,
 				06CE3BF920454FEF00DCBD92 /* LogInViewController.swift in Sources */,
 				06CE3C222045945400DCBD92 /* LogInViewModel.swift in Sources */,
+				06CE3C242045AF6D00DCBD92 /* MainViewController.swift in Sources */,
 				06CE3BF720454FEF00DCBD92 /* AppDelegate.swift in Sources */,
+				06CE3C262045B05300DCBD92 /* MainViewModel.swift in Sources */,
 				06CE3C2020458D9300DCBD92 /* ApiError.swift in Sources */,
 				06CE3C1620457E6600DCBD92 /* UIViewController+Extension.swift in Sources */,
 				06CE3C1A2045887200DCBD92 /* HttpClient.swift in Sources */,

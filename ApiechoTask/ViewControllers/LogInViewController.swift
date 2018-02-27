@@ -33,6 +33,8 @@ class LogInViewController: UIViewController {
     var isSignIn = true
     var logInViewModel = LogInViewModel()
     
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,6 +94,7 @@ extension LogInViewController  {
         nameTextField.placeholder = "Name"
         nameTextField.title = "Name"
         nameTextField.text = ""
+        nameTextField.clearButtonMode = .whileEditing
         
         emailTextField.tintColor = UIColor.CustomColors.darkRed
         emailTextField.textColor = UIColor.darkGray
@@ -99,6 +102,7 @@ extension LogInViewController  {
         emailTextField.placeholder = "Email"
         emailTextField.title = "Email"
         emailTextField.text = "doit@d.com"
+        emailTextField.clearButtonMode = .whileEditing
         emailTextField.keyboardType = UIKeyboardType.emailAddress
         
         passwordTextField.tintColor = UIColor.CustomColors.darkRed
@@ -107,6 +111,7 @@ extension LogInViewController  {
         passwordTextField.placeholder = "Password"
         passwordTextField.title = "Password"
         passwordTextField.text = "qqqqq"
+        passwordTextField.clearButtonMode = .whileEditing
         passwordTextField.isSecureTextEntry = true
         
         view.addSubview(avatarImageView)
@@ -192,7 +197,7 @@ extension LogInViewController  {
             if isSignIn {
                 logInViewModel.postLogin(completion: { (success) in
                     if success {
-                        // next page
+                        self.toNextScreen()
                     } else {
                         self.createAlert(title: "Error!", message: "Error message")
                     }
@@ -200,13 +205,20 @@ extension LogInViewController  {
             } else {
                 logInViewModel.postSignUp(completion: { (success) in
                     if success {
-                        // next page
+                        self.toNextScreen()
                     } else {
                         self.createAlert(title: "Error!", message: "Error message")
                     }
                 })
             }
         }
+    }
+    
+    fileprivate func toNextScreen() {
+        let mainViewController = MainViewController()
+        mainViewController.view.backgroundColor = .white
+        let navigationController = UINavigationController(rootViewController: mainViewController)
+        self.present(navigationController, animated: true, completion: nil)
     }
     
     @objc func smallButtonAction(sender: UIButton!) {
